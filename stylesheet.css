@@ -103,10 +103,65 @@ h2 {
 }
 
 .name {
-  padding-top: 20px;
   margin: 0;
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 32px;
+}
+
+/* Profile header: split into top summary and full-width details */
+.profile-header {
+  max-width: 800px;
+  margin: 0 auto 1.2em;
+}
+.profile-header-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 0.85em;
+}
+.profile-header-photo {
+  flex-shrink: 0;
+}
+.profile-header-photo img {
+  display: block;
+  width: 168px;
+  height: 168px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+.profile-header-intro {
+  flex: 1;
+  min-width: 0;
+}
+.profile-header-intro .name {
+  margin-bottom: 0.4em;
+  line-height: 1.15;
+}
+.profile-header-summary,
+.profile-header-links,
+.profile-header-details {
+  margin: 0;
+  line-height: 1.65;
+}
+.profile-header-summary {
+  margin-bottom: 0.6em;
+}
+.profile-header-links {
+  font-size: 13.5px;
+}
+.profile-header-details {
+  text-align: justify;
+}
+
+@media (max-width: 720px) {
+  .profile-header-top {
+    flex-direction: column;
+    gap: 14px;
+  }
+  .profile-header-photo img {
+    width: 148px;
+    height: 148px;
+  }
 }
 
 .one {
@@ -154,6 +209,27 @@ span.highlight {
 .patent-list {
   font-size: 13px;
   line-height: 1.5;
+}
+
+/* US Patents: two columns side by side */
+.us-patents-row {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  margin: 0.5em 0;
+}
+.us-patents-col {
+  flex: 1;
+  min-width: 0;
+}
+.us-patents-col h2 {
+  margin-bottom: 0.35em;
+}
+@media (max-width: 720px) {
+  .us-patents-row {
+    flex-direction: column;
+    gap: 1em;
+  }
 }
 
 .patent-list a {
